@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Documentación - SOM</title>
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Documentaci\u00f3n";
+    var mkdocs_page_input_path = "tema6/Scripting.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> SOM</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tema 6</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../presentacio/">Presentación</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Documentación</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">SOM</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Tema 6 &raquo;</li>
+        
+      
+    
+    <li>Documentación</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="concepto-de-script">Concepto de script</h1>
+<p>Los scripts son guiones que contienen una serie de órdenes y estructuras organizadas secuencialmente.</p>
+<p>Principalmente, presentan las siguientes características:</p>
+<ul>
+<li>Se generan con gran facilidad y son bastantes funcionales.</li>
+<li>Se ejecutan de forma lineal-secuencial orden tras orden.</li>
+</ul>
+<p>Los lenguajes de scripts son interpretados, no compilados; lo que quiere decir que sus órdenes secuenciales son interpretadas por un sistema o programa padre. Actualmente, son muy conocidos lenguajes-scripts como JavaScript, PHP, ASP, etc., para el desarrollo de webs.</p>
+<p>El concepto de los scripts en Linux, es bastante análogo al de los ficheros por lotes (.bat) de MSDOS, siendo los scripts bastante más potentes por la cantidad de estructuras, bucles, y demás recursos que permiten utilizar.</p>
+<p>El Shell es la interfaz con la que el usuario-programador se comunica con el sistema operativo directamente. Principalmente, es el elemento encargado de las siguientes funciones:</p>
+<ul>
+<li>Interpretar comandos: Acepta comandos y los ejecuta; si se trata de comandos de los usuarios, como los scripts, los envía al Kernel para que sea este quien los ejecute y procese.</li>
+<li>Actuar como un intérprete de programación de un lenguaje de alto nivel.</li>
+</ul>
+<p>Existen distintos tipos de Shell, cada uno con una sintaxis diferente, pero con la misma filosofía: sh, csh, bash y tcsh.</p>
+<p>Podéis encontrar más información sobre shells en <a href="https://www.ibm.com/docs/es/aix/7.2?topic=administration-operating-system-shells">este enlace</a></p>
+<h1 id="trabajo-con-scripts">Trabajo con scripts</h1>
+<h2 id="tipos-y-ejecucion-de-scripts">Tipos y ejecución de scripts</h2>
+<p>La primera tarea será crear el script utilizando para ello cualquier editor que acompaña a Linux: nano, gedit, vi, etc.
+Al inicio de cada script, se identifica el tipo de fichero. En el caso de scripts tenemos las siguientes opciones:</p>
+<table>
+<thead>
+<tr>
+<th>Identificación</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#!bin/bash</td>
+<td>script de bash</td>
+</tr>
+<tr>
+<td>#!bin/sh</td>
+<td>script de shell</td>
+</tr>
+<tr>
+<td>#!usr/bin/python</td>
+<td>script de python</td>
+</tr>
+</tbody>
+</table>
+<p>Para ejecutar el script, se presentan dos opciones:</p>
+<ul>
+<li>Asignarle el permiso de ejecución al fichero y luego ejecutarlo</li>
+</ul>
+<pre><code class="language-console">$ chmod 777 miscript.sh
+$ ./miscript.sh
+</code></pre>
+<ul>
+<li>Ejecutarlo con bash</li>
+</ul>
+<pre><code class="language-console">$ bash miscript.sh
+</code></pre>
+<h2 id="variables">Variables</h2>
+<p>Las variables de shell pueden servir tanto para controlar el entorno (variables de entorno), como para utilizarlas en scripts, Y pueden ser de dos tipos:</p>
+<ul>
+<li>Locales al shell actual (visibles con set)</li>
+<li>Globales a todos los shells (variables de entorno, visibles con env), Las variables empiezan por una letra o por <code>_</code>, y generalmente se escriben en mayúsculas. Después del primer carácter, podemos poner letras, números o el carácter <code>_</code>.</li>
+</ul>
+<p>Las operaciones que podemos hacer con las variables son:</p>
+<ul>
+<li>Asignarles un valor: <code>variable=valor</code></li>
+<li>Recuperar su valor: <code>$variable o ${variable}</code><ul>
+<li>Las llaves se utilizan para recuperar un valor en expresiones más largas: <code>echo${var}hola</code></li>
+</ul>
+</li>
+<li>Obtener la longitud en caracteres de una variable:<code>echo ${#variable}</code></li>
+<li>Eliminar una variable: <code>unset variable</code></li>
+<li>Definir una variable como solo lectura: <code>readonly variable</code></li>
+</ul>
+<h3 id="variables-de-entorno">Variables de entorno</h3>
+<p>Cada shell se ejecuta en un entorno de ejecución determinado, que especifica determinados aspectos de funcionamiento mediante lo que se conoce como variables de entorno o variables globales. Veamos algunas de estas variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HOME</td>
+<td>Directorio del usuario</td>
+</tr>
+<tr>
+<td>MANPATH</td>
+<td>Ruta páginas del manual</td>
+</tr>
+<tr>
+<td>SHELL</td>
+<td>Shell por defecto</td>
+</tr>
+<tr>
+<td>PS1/PS2</td>
+<td>Prompts primario y secundario</td>
+</tr>
+<tr>
+<td>USERNAME</td>
+<td>Nombre del usuario</td>
+</tr>
+<tr>
+<td>LANG</td>
+<td>Localización y codificación</td>
+</tr>
+<tr>
+<td>PWD</td>
+<td>Directorio actual</td>
+</tr>
+<tr>
+<td>LC_*</td>
+<td>Aspectos de localización</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>Ruta de los ejecutables</td>
+</tr>
+<tr>
+<td>LANGUAGE</td>
+<td>Localización</td>
+</tr>
+</tbody>
+</table>
+<p>Para ver todas las variables de entorno, hacemos uso de la orden <code>env</code>. Además, si queremos definir una nueva variable de entorno, podemos hacer uso de la orden <code>export</code>. Con esto, la variable exportada será visible tanto en el shell actual como en los hijos</p>
+<h2 id="expansiones-del-shell">Expansiones del Shell</h2>
+<h3 id="expansiones-de-parametros">Expansiones de parámetros</h3>
+<p>Cuando accedemos a una variable con el símbolo <code>$</code>, estamos haciendo uso de la expansión de parámetros, que no es más que la sustitución del nombre de la variable por su valor.</p>
+<p>Cuando utilizamos las llaves <code>{ }</code> para la expansión, lo que hacemos es el nombre del parámetro (variable) o símbolo que queremos expandir. Veamos un ejemplo:</p>
+<pre><code class="language-bash">A=David
+echo &quot;Hola ${A}, bienvenido/a&quot;
+</code></pre>
+<p>??? note "Nota"
+    Es posible que en muchas ocasiones se reconozca la variable usando solo <code>$variable</code>en lugar de <code>${variable}</code>, pero es recomendable usar la expansión siempre con las llaves <code>{}</code>:::</p>
+<h3 id="expansiones-de-ordenes">Expansiones de órdenes</h3>
+<p>Con la expansión de órdenes podemos reemplazar una orden por su salida. Para eso podemos hacer uso de las siguientes opciones </p>
+<pre><code class="language-bash">$(orden)
+</code></pre>
+<p>o</p>
+<pre><code class="language-bash">`orden`
+</code></pre>
+<p>Veamos un ejemplo sencillo con el comando date:</p>
+<pre><code class="language-console">$ date
+jueves, 14 de febrero de 2019, 11:34:07 CET
+$ echo date
+date
+$ echo `date`
+jueves, 14 de febrero de 2019, 11:35:10 CET
+$ echo $(date)
+jueves, 14 de febrero de 2019, 11:36:20 CET
+$ echo &quot;Hoy es `date +%A`&quot;
+Hoy es jueves
+</code></pre>
+<h3 id="expansiones-de-llaves">Expansiones de llaves</h3>
+<p>Con la expansión de llaves podemos generar cadenas de texto arbitrarias, mediante la combinación de los elementos que coloquemos dentro de las llaves.</p>
+<pre><code class="language-console">$ echo a{d,c,b}e
+ade ace abe
+$ echo \/usr\/share{\/icons,\/applications}
+/usr/share/icons /usr/share/applications
+</code></pre>
+<p>Fijaos que escapamos la <code>/</code> con el carácter <code>\</code>.</p>
+<h3 id="expansion-aritmetica">Expansión aritmética</h3>
+<p>Con la expansión aritmética substituimos una expresión aritmética por su resultado. Para utilizarla podemos utilizar las siguientes sintaxis:
+- <code>$((expresión))</code>
+- <code>$[expresión]</code>
+- <code>let var=expresión</code></p>
+<p>Veamos algunos ejemplos:</p>
+<pre><code class="language-console">$ echo $((7*3/2))
+10
+$ echo $[3*2+5]
+11
+$ let n=5+10
+$ echo $n
+15
+</code></pre>
+<h2 id="paso-de-parametros-a-un-script">Paso de parámetros a un Script</h2>
+<p>Para pasar parámetros a un script, los añadimos después del nombre del script.</p>
+<pre><code class="language-console">$ ./miscript.sh arg1 arg2 arg3 ... argN
+</code></pre>
+<p>Dentro del script haremos referencia a los argumentos a través de las siguientes variables:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$0</code></td>
+<td>El nombre del script</td>
+</tr>
+<tr>
+<td><code>$1 a $9</code></td>
+<td>Argumentos del 1 al 9</td>
+</tr>
+<tr>
+<td><code>${10}, ${11}</code></td>
+<td>Argumentos a partir del 10</td>
+</tr>
+<tr>
+<td><code>$#</code></td>
+<td>Número de argumentos</td>
+</tr>
+<tr>
+<td><code>$* o $@</code></td>
+<td>Todos los argumentos</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos a verlo con un ejemplo:</p>
+<pre><code class="language-bash">#!/bin/bash
+SUMA=$((${1:-0} + ${2:-0} + ${3:-0}))
+echo $SUMA
+</code></pre>
+<p>Ejecución:</p>
+<pre><code class="language-console">$ bash ./s2.sh 1 2 3
+6
+</code></pre>
+<h2 id="tratamiento-de-la-entrada-y-la-salida">Tratamiento de la entrada y la salida</h2>
+<p>La lectura se puede realizar mediante dos mecanismos:</p>
+<ul>
+<li>A través de la entrada estándar (stdin) con el comando <code>read</code></li>
+</ul>
+<pre><code class="language-bash">#!/bin/bash
+echo -n &quot;Escribe el DNI y letra separados por un espacio&quot;
+read DNI LETRA
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+</div>
+<p>La opción <code>-n</code> evita el salto de línea final</p>
+<ul>
+<li>Con la redirección de entrada de un fichero</li>
+</ul>
+<pre><code class="language-console">read X &lt; fichero
+</code></pre>
+<p>Con esto, guardamos en la variable X el contenido de la primera línea del fichero.</p>
+<h2 id="resultado-de-la-ejecucion-de-una-orden-o-script">Resultado de la ejecución de una orden o Script</h2>
+<p>Las órdenes ejecutadas en un shell tienen un código de salida que se guarda en la variable <code>$?</code></p>
+<ul>
+<li>Si el código de salida (<code>$?</code>) es 0, indica que la orden se ha ejecutado correctamente.</li>
+<li>Si el código de salida (<code>$?</code>) es mayor que 0, indica que la orden no se ha ejecutado correctamente.</li>
+</ul>
+<p>Con la orden <code>exit</code>, podemos finalizar un script e indicar el código de salida (como argumento
+numérico) que deseemos, en función de la ejecución de éste.
+Si en un script no utilizamos <code>exit</code>, el resultado del script será el de la última orden ejecutada.</p>
+<p>Veamos un ejemplo:</p>
+<pre><code class="language-console">$ echo $((3+5))
+8
+$ echo $?
+0
+$ echo $((3/0))
+bash: 3/0: division by 0 (error token is &quot;0&quot;)
+$ echo $?
+1 
+</code></pre>
+<h1 id="estructuras-de-control-de-flujo">Estructuras de control de flujo</h1>
+<h2 id="estructura-condicional">Estructura condicional</h2>
+<table>
+<thead>
+<tr>
+<th>if simple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">if  condicion
+  then
+    cumple_condicion
+fi
+</code></pre>
+<hr />
+<pre><code>Aliniació     Capçalera       Aliniació       Aliniació
+a l'esquerra  centrada        a la dreta      per defecte
+</code></pre>
+<hr />
+<pre><code>Fila1       Fila 1        Fila 1        Fila 1
+Columna1    Columna2      Columna 3     Columna 3
+
+Fila2       Fila 2        Fila 2        Fila 2
+Columna1    Columna2      Columna 3     Columna 3
+</code></pre>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../presentacio/" class="btn btn-neutral" title="Presentación"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../presentacio/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

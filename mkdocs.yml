@@ -1,0 +1,18 @@
+site_name: SOM
+docs_dir: 'md'
+site_dir: 'docs'
+nav:
+    - Home: index.md
+    - Tema 6:
+      - Presentación: tema6/presentacio.md
+      - Documentación: tema6/Scripting.md
+    - About: about.md
+theme: 
+  name: readthedocs
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+markdown_extensions:
+  - admonition
+  - attr_list
